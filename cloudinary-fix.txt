@@ -1,0 +1,18 @@
+CLOUDINARY FIX
+
+You were opening index.html directly from C: drive. Real Cloudinary upload needs the local Node server.
+
+Option 1 - Easy preview:
+- Open index.html directly.
+- Images will save locally in the browser preview, no error.
+
+Option 2 - Real Cloudinary upload:
+1. Rename .env.example to .env
+2. Add these real Cloudinary values:
+   CLOUDINARY_CLOUD_NAME=your_cloud_name
+   CLOUDINARY_API_KEY=your_api_key
+   CLOUDINARY_API_SECRET=your_api_secret
+3. Double-click START-WEBSITE.bat
+4. Use the website at http://localhost:3000
+
+Do not share API secret publicly.

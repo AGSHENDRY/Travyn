@@ -1,0 +1,17 @@
+{
+  "name": "travyn-github-mongodb-vps",
+  "version": "1.0.0",
+  "description": "TRAVYN e-commerce with MongoDB shared store and VPS admin authentication",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "latest",
+    "express": "latest",
+    "nodemailer": "latest",
+    "multer": "latest",
+    "cloudinary": "latest",
+    "mongodb": "^6.20.0"
+  }
+}

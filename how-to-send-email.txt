@@ -1,0 +1,21 @@
+TRAVYN EMAIL NOTIFICATION SETUP
+
+Why mail was not sending:
+A normal HTML/CSS/JS website opened with index.html cannot send email automatically.
+Browsers block direct email sending for security. So this fixed version includes a Node.js backend.
+
+How to run:
+1. Install Node.js.
+2. Open this folder.
+3. Rename .env.example to .env.
+4. Add your SMTP email password/app password.
+5. Double click START-WEBSITE.bat
+6. Open http://localhost:3000
+7. Login admin and send notification.
+
+Gmail setup:
+Use Gmail App Password, not your normal Gmail password.
+Google Account > Security > 2-Step Verification > App Passwords.
+
+WhatsApp:
+WhatsApp still opens chat links because WhatsApp bulk automatic sending requires WhatsApp Business Cloud API.

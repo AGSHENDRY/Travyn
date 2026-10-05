@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRAVYN | Premium Oversized Streetwear</title>
+  <meta name="description" id="metaDescription" content="TRAVYN premium oversized t-shirts in Kerala with GST invoice, UPI payment and WhatsApp checkout." />
+  <meta name="keywords" id="metaKeywords" content="Travyn, oversized t shirt Kerala, premium streetwear India, GST invoice tshirt" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" id="canonicalLink" href="https://travyn.in/" />
+  <meta property="og:title" id="ogTitle" content="TRAVYN | Premium Oversized Streetwear" />
+  <meta property="og:description" id="ogDescription" content="Shop Travyn premium oversized t-shirts with GST invoice and WhatsApp checkout." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home">TRAVYN</a>
+    <nav class="desktop-nav">
+      <a href="#shop">Shop</a>
+      <a href="#drops">Drops</a>
+      <a href="#reviews">Reviews</a>
+      <button class="nav-login user-login-btn" id="openUserLoginBtn">User Login</button>
+      <button class="notify-nav-btn" id="openUserNotificationsBtn" type="button">🔔 <span id="userNotificationBadge">0</span></button>
+      <button class="nav-login" id="openUserProfileBtn" type="button">Profile</button>
+      <button class="nav-login" id="openAdminLoginBtn">Admin Login</button>
+    </nav>
+    <button class="icon-btn" id="cartOpenBtn">Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow" id="heroEyebrowText">Kerala Premium Streetwear</p>
+        <h1 id="heroTitleText">Oversized tees with a luxury black & white identity.</h1>
+        <p id="heroDescriptionText">Mobile-first ecommerce demo for Travyn with product panels, admin controls, cart, GST bill format, UPI note and WhatsApp order integration.</p>
+        <div class="actions">
+          <a class="btn primary" href="#shop">Shop Now</a>
+          <button class="btn secondary" id="heroAdminLoginBtn">Admin Login</button>
+        </div>
+      </div>
+      <div class="hero-product">
+        <div class="mock-shirt" id="heroMockShirt"><img id="heroImagePreview" class="hero-uploaded-image hidden" alt="Travyn hero" /><span id="heroImageBrandText">TRAVYN</span><small id="heroImageSmallText">OVERSIZED DROP</small></div>
+      </div>
+    </section>
+
+    <section class="marquee"><span>250 GSM LOOK</span><span>OVERSIZED FIT</span><span>UPI PAYMENT</span><span>GST INVOICE</span><span>WHATSAPP ORDER</span></section>
+
+    <section class="section" id="drops">
+      <div class="section-head">
+        <p class="eyebrow">Categories</p>
+        <h2>Shop by drop</h2>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="section-head row">
+        <div>
+          <p class="eyebrow">Collection</p>
+          <h2>Featured products</h2>
+        </div>
+        <select id="categoryFilter" class="select"></select>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="section split-panel">
+      <div>
+        <p class="eyebrow">Experience</p>
+        <h2>Premium shopping feel, simple local setup.</h2>
+      </div>
+      <div class="feature-list">
+        <article><b>Product view</b><p>Size, color, quantity, details and sticky buy button.</p></article>
+        <article><b>Admin controlled</b><p>Add, edit, delete products and create category cards.</p></article>
+        <article><b>Order ready</b><p>Checkout opens WhatsApp with GST price breakdown.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="section-head">
+        <p class="eyebrow">Reviews</p>
+        <h2>Customer feedback</h2>
+      </div>
+      <div class="review-grid" id="homepageReviewGrid">
+        <article>“Premium fitting and cloth feels heavy.”<b>— Adhil</b></article>
+        <article>“The black/white website look is very clean.”<b>— Nihal</b></article>
+        <article>“WhatsApp checkout is easy for customers.”<b>— Arjun</b></article>
+      </div>
+
+      <div class="customer-feedback-form">
+        <div>
+          <p class="eyebrow">Registered users</p>
+          <h3>Add your customer feedback</h3>
+          <p class="muted small">Login/Register first, then add your review here. Admin can delete reviews from Customer Feedback panel.</p>
+        </div>
+        <select id="homeReviewProduct"></select>
+        <select id="homeReviewRating">
+          <option value="5">★★★★★ 5 Star</option>
+          <option value="4">★★★★ 4 Star</option>
+          <option value="3">★★★ 3 Star</option>
+          <option value="2">★★ 2 Star</option>
+          <option value="1">★ 1 Star</option>
+        </select>
+        <input id="homeReviewPhoto" type="file" accept="image/*" />
+        <textarea id="homeReviewText" placeholder="Write your feedback about Travyn product"></textarea>
+        <button class="btn primary" id="submitHomeReviewBtn">Submit Review</button>
+      </div>
+    </section>
+
+    <section class="section admin-teaser" id="admin-info">
+      <div class="admin-teaser-card">
+        <p class="eyebrow">Admin controlled</p>
+        <h2>Products, categories and orders are protected.</h2>
+        <p class="muted">Click Admin Login to open the private admin panel.</p>
+        <button class="btn primary" id="teaserAdminLoginBtn">Admin Login</button>
+      </div>
+    </section>
+
+  </main>
+
+
+  <div class="user-auth-overlay hidden" id="userAuthOverlay" aria-hidden="true">
+    <div class="user-auth-card">
+      <button class="login-close" id="closeUserAuthBtn">×</button>
+      <div class="user-auth-brand">
+        <p class="eyebrow">TRAVYN ACCOUNT</p>
+        <h2 id="userAuthTitle">User Login</h2>
+        <p class="muted small" id="userAuthNote">Login or create account to view products and add items to cart.</p>
+      </div>
+      <div class="user-auth-tabs">
+        <button class="active" id="showUserLoginBtn" type="button">Login</button>
+        <button id="showUserRegisterBtn" type="button">Register</button>
+      </div>
+      <div id="userLoginForm" class="user-auth-form">
+        <input id="loginUserPhone" placeholder="Phone or email" />
+        <input id="loginUserPassword" type="password" placeholder="Password" />
+        <button class="btn primary" id="userLoginSubmitBtn">Login</button>
+      </div>
+      <div id="userRegisterForm" class="user-auth-form hidden">
+        <input id="registerUserName" placeholder="Full name" />
+        <input id="registerUserPhone" placeholder="Phone number" inputmode="tel" />
+        <input id="registerUserEmail" placeholder="Email address" type="email" />
+        <textarea id="registerUserAddress" placeholder="Full address"></textarea>
+        <input id="registerUserPin" placeholder="Pin code" inputmode="numeric" />
+        <input id="registerUserPassword" type="password" placeholder="Create password" />
+        <button class="btn primary" id="userRegisterSubmitBtn">Create Account</button>
+      </div>
+      <p class="muted small">After login you can view products, add cart, buy now and submit reviews.</p>
+    </div>
+  </div>
+
+  <div class="admin-login-overlay hidden" id="adminLoginOverlay" aria-hidden="true">
+    <div class="login-window">
+      <button class="login-close" id="closeAdminLoginBtn">×</button>
+      <div class="login-art">
+        <div class="blob one"></div>
+        <div class="blob two"></div>
+        <div class="blob three"></div>
+      </div>
+      <div class="login-form-side">
+        <div id="loginCard">
+          <h2>Admin Login</h2>
+          <p class="muted small">Enter admin details to open panel</p>
+          <input id="adminUsername" placeholder="Username" autocomplete="username" />
+          <input id="adminPassword" placeholder="Password" type="password" autocomplete="current-password" />
+          <button class="login-gradient" id="loginBtn">LOGIN</button>
+          <p class="muted small">Secure admin access only.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="admin-panel-screen hidden admin-pro" id="adminDashboard">
+    <aside class="admin-sidebar">
+      <div class="admin-logo">
+        <span>T</span>
+        <div><b>TRAVYN</b><small>Admin Studio</small></div>
+      </div>
+      <button class="admin-nav tab active" data-tab="overviewPanel">⌁ Overview</button>
+      <button class="admin-nav tab" data-tab="productsPanel">▣ Products</button>
+      <button class="admin-nav tab" data-tab="categoriesPanel">◇ Categories</button>
+      <button class="admin-nav tab" data-tab="ordersPanel">◎ Orders</button>
+      <button class="admin-nav tab" data-tab="reviewsPanel">★ Customer Feedback</button>
+      <button class="admin-nav tab" data-tab="usersPanel">☻ Login Users</button>
+      <button class="admin-nav tab" data-tab="notificationsPanel">🔔 Notifications</button>
+      <button class="admin-nav tab" data-tab="homeEditPanel">✎ Home Edit</button>
+      <button class="admin-nav tab" data-tab="seoPanel">◎ SEO Setup</button>
+      <button class="admin-nav tab" data-tab="settingsPanel">⚙ Settings</button>
+      <button class="admin-nav danger" id="logoutBtn">↻ Logout</button>
+    </aside>
+
+    <main class="admin-workspace">
+      <div class="admin-topline">
+        <div>
+          <p class="eyebrow">Premium admin panel</p>
+          <h2>Manage Travyn store</h2>
+          <p class="muted">Dashboard opens only after admin login.</p>
+        </div>
+        <button class="close-admin-screen" id="closeAdminDashboardBtn">×</button>
+      </div>
+
+      <div class="admin-panel" id="overviewPanel">
+        <div class="stat-grid">
+          <article class="stat-card"><span>Visitors</span><b id="statVisitors">0</b><small>Total website visits</small></article>
+          <article class="stat-card"><span>Total Orders</span><b id="statOrders">0</b><small>Saved orders</small></article>
+          <article class="stat-card"><span>Total Selling</span><b id="statItemsSold">0</b><small>Items sold</small></article>
+          <article class="stat-card pink"><span>Selling Status</span><b id="statSellingStatus">No Sales</b><small id="statRevenue">₹0</small></article>
+          <article class="stat-card"><span>Total Products</span><b id="statProducts">0</b><small>Live catalogue</small></article>
+          <article class="stat-card"><span>Photo Reviews</span><b id="statReviews">0</b><small>Customer proof</small></article>
+        </div>
+        <div class="admin-hero-card">
+          <div>
+            <p class="eyebrow">Quick control</p>
+            <h3>Travyn live dashboard</h3>
+            <p class="muted">Track visitors, orders, total selling, revenue status and customer photo reviews from one premium dashboard.</p>
+          </div>
+          <button class="btn primary" data-tab="productsPanel">Add Product</button>
+        </div>
+        <div class="status-board">
+          <article><span>Conversion</span><b id="statConversion">0%</b><small>Orders / visitors</small></article>
+          <article><span>Average Order</span><b id="statAvgOrder">₹0</b><small>Revenue / orders</small></article>
+          <article><span>Latest Activity</span><b id="statLatestActivity">No activity</b><small>Auto updated</small></article>
+        </div>
+      </div>
+
+      <div class="admin-panel hidden" id="productsPanel">
+        <div class="panel-title"><div><p class="eyebrow">Catalogue</p><h3>Add / edit product</h3></div></div>
+        <div class="premium-form form-grid">
+          <input id="productId" type="hidden" />
+          <input id="productName" placeholder="Product name" />
+          <input id="productPrice" type="number" placeholder="Price" />
+          <input id="productDiscount" type="number" placeholder="Discount amount (₹)" />
+          <input id="productStock" type="number" placeholder="Total stock quantity" />
+          <input id="productShipping" type="number" placeholder="Shipping charge (₹)" />
+          <input id="productColors" placeholder="Available colours, comma separated (Black, White, Red)" />
+          <input id="productColorImages" placeholder="Colour image URLs: Black=https://..., White=https://..." />
+          <select id="productCategory"></select>
+          <input id="productImage" placeholder="Main image URL or Cloudinary URL" />
+          <input id="productImageFile" type="file" accept="image/*" title="Upload main product image to Cloudinary" />
+          <input id="productImages" placeholder="More image URLs, comma separated" />
+          <input id="productImagesFile" type="file" accept="image/*" multiple title="Upload more product images to Cloudinary" />
+          <textarea id="productDescription" placeholder="Description"></textarea>
+        </div>
+        <div class="actions"><button class="btn primary" id="saveProductBtn">Save Product</button><button class="btn secondary" id="clearProductBtn">Clear</button></div>
+        <div id="adminProductList" class="admin-list premium-list"></div>
+      </div>
+
+      <div class="admin-panel hidden" id="categoriesPanel">
+        <div class="panel-title"><div><p class="eyebrow">Homepage drops</p><h3>Create category</h3></div></div>
+        <div class="premium-form form-grid two">
+          <input id="categoryName" placeholder="Category name" />
+          <input id="categoryImage" placeholder="Category image URL or Cloudinary URL" />
+          <input id="categoryImageFile" type="file" accept="image/*" title="Upload category image to Cloudinary" />
+        </div>
+        <button class="btn primary" id="saveCategoryBtn">Add Category</button>
+        <div id="adminCategoryList" class="admin-list premium-list"></div>
+      </div>
+
+      <div class="admin-panel hidden" id="ordersPanel">
+        <div class="panel-title"><div><p class="eyebrow">Customer orders</p><h3>Orders</h3></div></div>
+        <p class="muted">Orders created from checkout are saved here in this browser.</p>
+        <div id="adminOrderList" class="admin-list premium-list"></div>
+      </div>
+
+      <div class="admin-panel hidden" id="reviewsPanel">
+        <div class="panel-title"><div><p class="eyebrow">Customer feedback</p><h3>User Product Reviews</h3></div></div>
+        <p class="muted">All registered users can add product photo reviews. Admin can view and delete any review here.</p>
+        <div id="adminReviewList" class="admin-list premium-list"></div>
+      </div>
+
+      <div class="admin-panel hidden" id="usersPanel">
+        <div class="panel-title"><div><p class="eyebrow">Registered customers</p><h3>Login user details</h3></div></div>
+        <p class="muted">Every user who registers on the website will be shown here with name, address, phone number, email, pin code and signup date.</p>
+        <div id="adminUserList" class="admin-list premium-list"></div>
+      </div>
+
+      <div class="admin-panel hidden" id="notificationsPanel">
+        <div class="panel-title"><div><p class="eyebrow">Offer automation</p><h3>Send user notifications</h3></div></div>
+        <p class="muted">Create offer or new product alerts and send the same notification to every registered user's WhatsApp number and email address.</p>
+        <div class="notification-admin-grid">
+          <div class="premium-form">
+            <select id="notifyType">
+              <option value="offer">Offer Notification</option>
+              <option value="new-product">New Product Alert</option>
+              <option value="drop">New Drop Announcement</option>
+            </select>
+            <input id="notifyTitle" placeholder="Notification title e.g. New Drop Live" />
+            <textarea id="notifyMessage" placeholder="Message e.g. Flat ₹100 OFF today only"></textarea>
+            <input id="notifyLink" placeholder="Link / section e.g. #shop" value="#shop" />
+            <div class="send-option-box">
+              <label class="check-line"><input id="notifySendWhatsApp" type="checkbox" checked /> Send to registered WhatsApp numbers</label>
+              <label class="check-line"><input id="notifySendEmail" type="checkbox" checked /> Send to registered email addresses</label>
+              <label class="check-line"><input id="notifyBrowserPopup" type="checkbox" checked /> Also show website popup notification</label>
+            </div>
+            <button class="btn primary" id="sendNotificationBtn">Create & Send Notification</button>
+            <div id="lastShareActions" class="share-actions hidden">
+              <button class="btn secondary" id="whatsappAllUsersBtn" type="button">Send WhatsApp to Registered Users</button>
+              <button class="btn secondary" id="emailAllUsersBtn" type="button">Send Email to Registered Users</button>
+            </div>
+            <button class="btn secondary" id="sendNewProductTemplateBtn">Create & Send New Product Message</button>
+          </div>
+          <div>
+            <h4>Notification history</h4>
+            <div id="adminNotificationList" class="admin-list premium-list"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="admin-panel hidden" id="homeEditPanel">
+        <div class="panel-title"><div><p class="eyebrow">Homepage editor</p><h3>Edit hero text & image</h3></div></div>
+        <p class="muted">Change the main homepage heading, sub text, button labels and hero image from admin panel.</p>
+        <div class="premium-form form-grid">
+          <input id="homeEyebrowInput" placeholder="Small top text" />
+          <input id="homeTitleInput" placeholder="Main hero title" />
+          <textarea id="homeDescriptionInput" placeholder="Hero description"></textarea>
+          <input id="homePrimaryButtonInput" placeholder="Primary button text" />
+          <input id="homeSecondaryButtonInput" placeholder="Secondary button text" />
+          <input id="homeImageUrlInput" placeholder="Hero image URL" />
+          <input id="homeImageFileInput" type="file" accept="image/*" />
+        </div>
+        <div class="actions">
+          <button class="btn primary" id="saveHomeContentBtn">Save Homepage</button>
+          <button class="btn secondary" id="resetHomeContentBtn">Reset Default</button>
+        </div>
+        <div class="home-preview-admin">
+          <b>Live Preview</b>
+          <p class="muted">After saving, the homepage top banner updates instantly.</p>
+        </div>
+      </div>
+
+      <div class="admin-panel hidden" id="seoPanel">
+        <div class="panel-title"><div><p class="eyebrow">Admin only</p><h3>SEO Ranking Setup</h3></div></div>
+        <p class="muted">This SEO setup is visible only inside the admin panel. Customers will not see this section on the website.</p>
+        <div class="premium-form form-grid">
+          <input id="seoTitleInput" placeholder="Meta title" />
+          <input id="seoKeywordsInput" placeholder="SEO keywords, comma separated" />
+          <input id="seoCanonicalInput" placeholder="Canonical URL e.g. https://travyn.in/" />
+          <textarea id="seoDescriptionInput" placeholder="Meta description"></textarea>
+        </div>
+        <div class="actions">
+          <button class="btn primary" id="saveSeoBtn">Save SEO Setup</button>
+          <button class="btn secondary" id="resetSeoBtn">Reset SEO</button>
+        </div>
+        <div class="seo-preview-box">
+          <b>Google Preview</b>
+          <h4 id="seoPreviewTitle">TRAVYN | Premium Oversized Streetwear</h4>
+          <small id="seoPreviewUrl">https://travyn.in/</small>
+          <p id="seoPreviewDescription">Shop Travyn premium oversized t-shirts with GST invoice and WhatsApp checkout.</p>
+        </div>
+        <div class="settings-grid seo-checklist">
+          <article><span>Meta Title</span><b>Enabled</b></article>
+          <article><span>Meta Description</span><b>Enabled</b></article>
+          <article><span>Keywords</span><b>Enabled</b></article>
+          <article><span>Sitemap</span><b>sitemap.xml</b></article>
+          <article><span>Robots</span><b>robots.txt</b></article>
+          <article><span>GST Trust</span><b>Invoice Ready</b></article>
+        </div>
+      </div>
+
+      <div class="admin-panel hidden" id="settingsPanel">
+        <div class="panel-title"><div><p class="eyebrow">Store settings</p><h3>Business details</h3></div></div>
+        <div class="settings-grid">
+          <article><span>WhatsApp</span><b>+91 9846117875</b></article>
+          <article><span>Email</span><b>travynofficial@gmail.com</b></article>
+          <article><span>GST Number</span><b>322600029741ESJ</b></article>
+          <article><span>UPI ID</span><b>travyn@upi</b></article>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <div class="modal hidden" id="productModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close-btn" id="closeProductBtn">×</button>
+      <div class="gallery product-left-column">
+        <img id="modalMainImage" alt="Product" />
+        <div id="thumbRow" class="thumb-row"></div>
+        <aside class="product-review-box left-review-panel">
+          <div class="review-panel-head">
+            <p class="eyebrow">Customer Proof</p>
+            <h3>Photo Reviews</h3>
+          </div>
+          <div id="productReviews" class="product-photo-reviews"></div>
+          <div class="user-review-form">
+            <h4>Add customer feedback</h4>
+            <p class="muted small">Only registered users can submit. Your saved profile name, email and phone will be attached.</p>
+            <input id="userReviewPhoto" type="file" accept="image/*" />
+            <select id="userReviewRating">
+              <option value="5">★★★★★ 5 Star</option>
+              <option value="4">★★★★ 4 Star</option>
+              <option value="3">★★★ 3 Star</option>
+            </select>
+            <textarea id="userReviewText" placeholder="Write your review"></textarea>
+            <button class="btn secondary" id="submitUserReviewBtn">Submit Feedback</button>
+          </div>
+        </aside>
+      </div>
+      <div class="product-info">
+        <p class="eyebrow">TRAVYN Product</p>
+        <h2 id="modalProductName"></h2>
+        <div class="description-box">
+          <p id="modalProductDescription" class="muted product-desc collapsed"></p>
+          <button class="read-more-btn hidden" id="readMoreDescBtn" type="button">Read More</button>
+        </div>
+        <h3 id="modalProductPrice"></h3>
+        <p class="product-meta-line" id="stockNote">Stock: 0 · Shipping: Free</p>
+        <label>Size</label><div id="sizeOptions" class="chips"></div>
+        <label>Color</label><div id="colorOptions" class="chips"></div>
+        <label>Quantity</label><div class="qty"><button id="qtyMinus">−</button><span id="qtyValue">1</span><button id="qtyPlus">+</button></div>
+        <details open><summary>Shipping / Return</summary><p>Shipping ₹0 in launch offer. Return accepted for size issue within 3 days.</p></details>
+        <button class="btn primary sticky-buy" id="addToCartBtn">Add to Cart</button>
+        <button class="btn secondary" id="buyNowBtn">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+
+  <aside class="drawer hidden" id="profileDrawer">
+    <div class="drawer-card profile-drawer-card profile-dashboard-card">
+      <button class="close-btn profile-close" id="closeProfileBtn">×</button>
+      <div class="profile-shell">
+        <aside class="profile-sidebar">
+          <div class="profile-logo">T</div>
+          <button class="profile-side-item active" type="button" data-profile-tab="profileEditTab">My Profile</button>
+          <button class="profile-side-item" type="button" data-profile-tab="profileCartTab">Carted Products</button>
+          <button class="profile-side-item" type="button" data-profile-tab="profilePurchasedTab">Purchased</button>
+          <button class="profile-side-item" type="button" data-profile-tab="profileNotificationTab">Notifications</button>
+          <button class="profile-side-item" type="button" data-profile-tab="profileSettingsTab">Settings</button>
+        </aside>
+        <main class="profile-main-panel">
+          <header class="profile-topline">
+            <div>
+              <p class="eyebrow">TRAVYN ACCOUNT</p>
+              <h2>My Profile</h2>
+            </div>
+            <div class="profile-card profile-mini-card">
+              <div class="profile-avatar" id="profileAvatar">U</div>
+              <div>
+                <h3 id="profileNameText">Customer</h3>
+                <p id="profileEmailText" class="muted small">-</p>
+                <p id="profilePhoneText" class="muted small">-</p>
+              </div>
+            </div>
+          </header>
+
+          <section class="profile-content-grid">
+            <nav class="profile-inner-menu">
+              <button class="profile-inner-active" type="button" data-profile-tab="profileEditTab">✎ Edit Profile</button>
+              <button type="button" data-profile-tab="profileNotificationTab">🔔 Notifications</button>
+              <button type="button" data-profile-tab="profileCartTab">🛒 Carted Products</button>
+              <button type="button" data-profile-tab="profilePurchasedTab">✓ Purchased Products</button>
+              <button type="button" data-profile-tab="profileSettingsTab">⚙ Account Details</button>
+            </nav>
+
+            <section class="profile-edit-panel profile-tab-panel" id="profileEditTab">
+              <h3>Edit Profile</h3>
+              <div class="profile-big-avatar">
+                <div class="profile-avatar large" id="profileAvatarLarge">U</div>
+                <span>✎</span>
+              </div>
+              <div class="profile-form profile-form-modern">
+                <div class="field"><label>Full Name</label><input id="profileNameInput" placeholder="Full name" /></div>
+                <div class="field"><label>Contact Number</label><input id="profilePhoneInput" placeholder="Phone number" inputmode="tel" /></div>
+                <div class="field field-wide"><label>Email</label><input id="profileEmailInput" placeholder="Email address" type="email" /></div>
+                <div class="field field-wide"><label>Address</label><textarea id="profileAddressInput" placeholder="Full address"></textarea></div>
+                <div class="field"><label>Pin Code</label><input id="profilePinInput" placeholder="Pin code" inputmode="numeric" /></div>
+                <div class="field"><label>Country</label><input value="India" readonly /></div>
+                <button class="btn primary profile-save-btn" id="saveProfileBtn">Save Profile</button>
+              </div>
+            </section>
+
+            <section class="profile-edit-panel profile-tab-panel hidden" id="profileNotificationTab">
+              <h3>Notifications</h3>
+              <div id="profileNotificationList" class="profile-list"></div>
+            </section>
+
+            <section class="profile-edit-panel profile-tab-panel hidden" id="profileCartTab">
+              <h3>Carted Products</h3>
+              <div id="profileCartList" class="profile-list"></div>
+            </section>
+
+            <section class="profile-edit-panel profile-tab-panel hidden" id="profilePurchasedTab">
+              <h3>Purchased Products</h3>
+              <div id="profilePurchasedList" class="profile-list"></div>
+            </section>
+
+            <section class="profile-edit-panel profile-tab-panel hidden" id="profileSettingsTab">
+              <h3>Account Details</h3>
+              <div class="profile-list">
+                <p><b>Name:</b> <span id="profileDetailName">-</span></p>
+                <p><b>Phone:</b> <span id="profileDetailPhone">-</span></p>
+                <p><b>Email:</b> <span id="profileDetailEmail">-</span></p>
+                <p><b>Address:</b> <span id="profileDetailAddress">-</span></p>
+                <p><b>Pin Code:</b> <span id="profileDetailPin">-</span></p>
+              </div>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="drawer hidden" id="notificationDrawer">
+    <div class="drawer-card notification-drawer-card">
+      <button class="close-btn" id="closeNotificationsBtn">×</button>
+      <p class="eyebrow">TRAVYN ALERTS</p>
+      <h2>Offers & New Products</h2>
+      <p class="muted small">Your latest Travyn updates will appear here. Admin alerts are also sent to your registered WhatsApp and email.</p>
+      <div id="userNotificationList" class="notification-list"></div>
+      <button class="btn secondary" id="clearUserNotificationsBtn">Clear My Notifications</button>
+    </div>
+  </aside>
+
+  <aside class="drawer hidden" id="cartDrawer">
+    <div class="drawer-card">
+      <button class="close-btn" id="closeCartBtn">×</button>
+      <h2>Your cart</h2>
+      <div id="cartItems"></div>
+      <div class="bill-box">
+        <p><span>Subtotal</span><b id="subtotalAmount">₹0</b></p>
+        <p><span>GST 5%</span><b id="gstAmount">₹0</b></p>
+        <p><span>Shipping</span><b id="shippingAmount">₹0</b></p>
+        <h3><span>Total</span><b id="totalAmount">₹0</b></h3>
+      </div>
+      <input id="customerName" placeholder="Customer name" />
+      <input id="customerPhone" placeholder="Phone number" />
+          <input id="customerEmail" placeholder="Email address" type="email" />
+      <textarea id="customerAddress" placeholder="Address"></textarea>
+      <input id="customerPin" placeholder="Pin code" inputmode="numeric" />
+      <button class="btn primary" id="checkoutBtn">Buy Now via WhatsApp</button>
+      <p class="muted small">UPI: travyn@upi · GST: 322600029741ESJ · travynofficial@gmail.com</p>
+    </div>
+  </aside>
+
+  <footer>© 2026 TRAVYN · www.travyn.in · +91 9846117875</footer>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
